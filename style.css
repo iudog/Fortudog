@@ -1,0 +1,595 @@
+:root { /* 此部分css不包含评论区样式，修改评论样式请前往comments.css */
+    --fangkuang-color: #ffc0cb95; /* 定义方框背景色变量，后续所有方框都引用这个值 */
+    --maoboli-mohu: blur(10px); /* 毛玻璃效果变量，推荐0~20px,越高越糊 */
+    --maoboli-biankuang: 1px solid #ffffff66; /* 玻璃边框变量 */
+    --lianjie-yuanshi: #5b1823; /* 链接默认色 */
+    --lianjie-xuanting: #ffd3d3; /* 链接悬停颜色 */
+    --zhandian-mingcheng: #631926; /* 导航栏标题、站长名字颜色 */
+    --wenzhang-fengmian-biaoti: #ffc0cb; /* 文章标题颜色 */
+    --wenzhang-fengmian-xinxi: #9c3345; /* 文章信息（作者、发布时间等）颜色 */
+    --anniu: #ff8b9f; /* 按钮颜色 */
+}
+
+
+
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: STKaiti, KaiTi, sans-serif;
+    scrollbar-width: none;
+}
+
+.fengmian {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+
+
+
+
+
+
+
+/* 导航栏样式 */
+.daohanglan {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    border-radius: 15px;
+    padding: 15px 55px;
+    background-color: var(--fangkuang-color);
+    backdrop-filter: var(--maoboli-mohu);
+    border: var(--maoboli-biankuang);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-sizing: border-box;
+    /* 动画必需的属性 */
+    overflow: hidden;
+    transform-origin: center top;
+    will-change: transform, opacity;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 30px;
+    color: var(--zhandian-mingcheng);
+    font-weight: bold;
+}
+
+.caidan {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.daohang-liebiao {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.caidan-xiangmu {
+    margin-left: 45px;
+}
+
+.caidan-xiangmu a {
+    text-decoration: none;
+    color: var(--lianjie-yuanshi);
+    text-decoration-color: transparent;
+    transition: color 0.3s ease, -webkit-text-stroke 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.caidan-xiangmu a:hover {
+    color: var(--lianjie-xuanting);
+    -webkit-text-stroke: 0.1px var(--lianjie-xuanting);
+    text-decoration: underline;
+    text-decoration-color: var(--lianjie-xuanting);
+}
+
+.caidan-xiangmu a.caidan-xiangmu-xuanzhong {
+    color: #c2185b;
+    text-decoration: underline;
+    text-decoration-color: #c2185b;
+}
+
+.quanbu-ronqi {
+    position: relative;
+    min-height: 100vh;
+    z-index: 1;
+    overflow-y: visible;
+}
+
+
+
+
+
+
+
+
+
+/* 侧边栏样式 */
+.cebianlan-rongqi {
+    width: 19%;
+    min-width: 19%;
+    padding: 0 20px;
+    position: sticky;
+    top: 25px;
+    max-height: calc(100vh - 25px);
+}
+
+.cebianlan-touxiang {
+    padding: 25px;
+    margin: 0 0 25px;
+    border-radius: 15px;
+    background-color: var(--fangkuang-color);
+    backdrop-filter: var(--maoboli-mohu);
+    border: var(--maoboli-biankuang);
+}
+
+.touxiang-quyu {
+    text-align: center;
+}
+
+.touxiang-tu {
+    width: 70%;
+    max-width: 100px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.touxiang-tu:hover {
+    transform: rotate(-15deg);
+}
+
+.geren-jianjie {
+    text-align: center;
+}
+
+.zuozhe-mingcheng {
+    color: var(--zhandian-mingcheng);
+    margin: 0 0 12px;
+}
+
+.touxiang-tongji {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.cebianlan-sousuo {
+    margin: 0 0 25px;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: var(--fangkuang-color);
+    backdrop-filter: var(--maoboli-mohu);
+    border: var(--maoboli-biankuang);
+    overflow: hidden;
+}
+
+.cebianlan-sousuo-biaodan {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.cebianlan-sousuo-shurukuang {
+    flex: 1;
+    min-width: 30px;
+    height: auto;
+    padding: 10px 14px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    background: #ffeeee;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--lianjie-yuanshi);
+    box-sizing: border-box;
+}
+
+.cebianlan-sousuo-shurukuang::placeholder {
+    color: var(--lianjie-yuanshi);
+    opacity: 0.7;
+}
+
+.cebianlan-sousuo-anniu {
+    flex-shrink: 0;
+    width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 15px;
+    border: none;
+    border: var(--maoboli-biankuang);
+    background: var(--anniu);
+    color: var(--lianjie-yuanshi);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.cebianlan-sousuo-anniu:hover {
+    background-color: var(--lianjie-xuanting);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 主要内容 */
+.yulu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    position: relative;
+    z-index: 10;
+}
+
+.riye {
+    font-size: 2.8rem;
+    margin: 0;
+    color: #ffc0cb7d;
+    -webkit-text-stroke: 1px #000000;
+}
+
+.mengxiang {
+    color: transparent;
+    font-size: 2rem;
+    margin: 0.5rem;
+    -webkit-text-stroke: 1px #000000;
+}
+
+.neirong-rongqi {
+    display: flex;
+    flex-direction: row;
+    padding: 0 15% 0 10%;
+    min-height: 100vh;
+}
+
+.wenzhang-rongqi {
+    flex-grow: 1;
+    padding: 0 20px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.wenzhang-rongqi a{
+    text-decoration: none;
+    color: var(--lianjie-yuanshi);
+    text-decoration-color: transparent;
+    transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.wenzhang-rongqi a:hover{
+    color: var(--lianjie-xuanting);
+    text-decoration: underline;
+    text-decoration-color: var(--lianjie-xuanting);
+}
+
+.wenzhang-fengmian {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0 0 20px;
+    background-color: var(--fangkuang-color);
+    backdrop-filter: var(--maoboli-mohu);
+    border: var(--maoboli-biankuang);
+    border-radius: 15px;
+    /* 允许标题换行后的内容超出文章卡片显示。 */
+    overflow: visible;
+    transition: transform 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.wenzhang-fengmian:hover {
+    transform: translateY(-5px);
+}
+
+.wenzhang-dianji-ceng {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: block;
+    background: transparent;
+    text-decoration: none;
+}
+
+.wenzhang-shangbu,
+.wenzhang-meiyoutu,
+.yuanxinxi-neirong {
+    position: relative;
+    z-index: 1;
+}
+
+.wenzhang-shangbu {
+    position: relative;
+    width: 100%;
+    /* 让封面高度由固定比例图片和换行文字共同决定。 */
+    aspect-ratio: auto;
+    /* 让图片层和文字层占用同一个封面区域。 */
+    display: grid;
+    /* 保留圆角并隐藏超出文章封面的内容。 */
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.suolvetu {
+    grid-area: 1 / 1;
+    aspect-ratio: 16 / 5;
+    align-self: start;
+    width: 100%;
+    height: auto;
+}
+
+.suolvetu img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fengmian-biaoti {
+    margin: 20px 20px 10px;
+    font-size: 3rem;
+    color: var(--wenzhang-fengmian-biaoti);
+    -webkit-text-stroke: 0.3px var(--wenzhang-fengmian-xinxi);
+    white-space: normal;
+    /* overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+.fabiao-xinxi {
+    margin: 0 20px;
+    font-size: 1rem;
+    color: var(--wenzhang-fengmian-xinxi);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fabiao-xinxi span {
+    display: inline-block;
+    margin-right: 22px;
+    white-space: nowrap;
+}
+
+.wenzhang-diejia {
+    grid-area: 1 / 1;
+    position: relative;
+    inset: auto;
+    display: flex;
+    flex-direction: column;
+    /* 让文字内容靠近封面底部显示。 */
+    justify-content: flex-end;
+    padding: 18px;
+    background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.08) 55%, rgba(0,0,0,0));
+    box-sizing: border-box;
+}
+
+.wenzhang-diejia .fengmian-biaoti {
+    color: var(--wenzhang-fengmian-biaoti);
+    margin: 0;
+    /* 允许标题按照可用宽度自动换行。 */
+    white-space: normal;
+    /* 让换行后的标题完整显示，不再被标题自身裁切。 */
+    overflow: visible;
+    /* 取消标题被截断时的省略号。 */
+    text-overflow: clip;
+    -webkit-text-stroke: 0.3px var(--wenzhang-fengmian-xinxi);
+}
+
+.wenzhang-diejia .fabiao-xinxi {
+    color: var(--wenzhang-fengmian-biaoti);
+    margin: 8px 0 0;
+    text-shadow: 0 1px 2px var(--wenzhang-fengmian-xinxi);
+}
+
+.yuanxinxi-neirong {
+    flex: 1;
+    margin-right: 0;
+    padding: 18px 20px 20px;
+    order: 1;
+    flex-direction: column;
+}
+
+.neirong {
+    flex: 1;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+    font-size: 10px;
+}
+
+.neirong p{
+    margin: 0;
+    font-size: 1.5rem;
+    color: #2f1419;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 分页导航容器 */
+.page-navigator {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    gap: 12px;
+    list-style-type: none;
+}
+
+.page-navigator a,
+.page-navigator span {
+    display: inline-block;
+    min-width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    padding: 0 2px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: #00000000;
+    backdrop-filter: var(--maoboli-mohu);
+    border: var(--maoboli-biankuang);
+    color: var(--lianjie-yuanshi);
+    text-decoration: none;
+}
+
+/* 当前页码 */
+.page-navigator .current {
+    border-radius: 50%;
+    background-color: var(--anniu);
+}
+
+/* 悬停效果 */
+.page-navigator a:hover:not(.current) {
+    background-color: var(--fangkuang-color);
+    color: var(--anniu);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 页脚样式 */
+.yejiao {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--fangkuang-color);
+    backdrop-filter: var(--maoboli-mohu);
+    border: var(--maoboli-biankuang);
+    border-radius: 15px;
+    margin: 20px 0;
+}
+
+
+
+
+
+
+
+
+/* post page页面 */
+.wenzhang-biaoti {
+    margin: 100px 10% 40px;
+    text-align: center;
+    background-color: var(--fangkuang-color);
+    backdrop-filter: var(--maoboli-mohu);
+    border: var(--maoboli-biankuang);
+    border-radius: 15px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transform-origin: center top;
+    will-change: transform, opacity;
+}
+
+.biaoti-dazi {
+    margin: 40px 0;
+    font-size: 2.6rem;
+    color: var(--wenzhang-fengmian-xinxi);
+    font-weight: bold;
+    line-height: 1.35;
+    -webkit-text-stroke: 0.3px #000000;
+    white-space: normal;
+    word-break: break-word;
+}
+
+.fabiao-shijian {
+    margin: 20px 0;
+    font-size: 1.05rem;
+    color: var(--wenzhang-fengmian-xinxi);
+    font-weight: bold;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.wenzhang-neirong {
+    padding: 50px;
+    background-color: var(--fangkuang-color);
+    backdrop-filter: var(--maoboli-mohu);
+    border: var(--maoboli-biankuang);
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+.wenzhang-neirong a,
+.danwen-zhengwen a {
+    color: var(--lianjie-yuanshi);
+    text-decoration: underline;
+    transition: color 0.3s ease, text-decoration-color 0.3s ease;
+}
+
+.wenzhang-neirong a:hover,
+.danwen-zhengwen a:hover {
+    color: var(--lianjie-xuanting);
+    text-decoration-color: var(--lianjie-xuanting);
+}
+
+.wenzhang-neirong img {
+    max-width: 100%;
+    object-fit: contain;
+}

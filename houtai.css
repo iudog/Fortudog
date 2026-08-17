@@ -1,0 +1,65 @@
+.ti-shi-ka-pian {
+    border-left: 4px solid #ffc0cb;
+    background: #fff5f7;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.ti-shi-ka-pian .wen-zi-nei-rong {
+    color: #555;
+}
+
+.da-shang-qu-kuai {
+    margin-top: 18px; /* 稍微拉开与上方文字的距离 */
+    display: flex;
+    gap: 50px; /* 两张码之间的间距 */
+    align-items: flex-start;
+}
+
+.dan-ge-ma {
+    text-align: center;
+}
+
+.dan-ge-ma img {
+    width: 300px; /* 调大尺寸 */
+    height: 300px;
+    object-fit: contain;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    transition: border-color 0.2s;
+}
+
+.dan-ge-ma img:hover {
+    border-color: #ffc0cb;
+}
+
+.dan-ge-ma .ma-biao-qian {
+    display: block;
+    margin-top: 12px; /* 标签与图片距离稍大 */
+    font-size: 14px;
+    color: #888;
+}
+
+.da-shang-wen-zi {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #b87333;
+    font-style: italic;
+}
+
+@media (max-width: 600px) {
+    .da-shang-qu-kuai {
+        flex-direction: column; /* 改为纵向 */
+        align-items: center; /* 居中对齐 */
+        gap: 24px; /* 上下间距适当缩小 */
+    }
+
+    .dan-ge-ma img {
+        width: 250px; /* 手机上图片稍微缩小，避免溢出 */
+        height: 250px;
+    }
+}

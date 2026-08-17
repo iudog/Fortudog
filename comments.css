@@ -1,0 +1,154 @@
+#comments {
+    margin: 20px 0;
+    padding: 22px 24px;
+    background-color: #ffc0cbc5; /* 评论区整体背景颜色，可随主题色调整 */
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+#comments h3,
+#comments #response {
+    margin: 0 0 14px 0;
+    color: #5b1823; /* 标题文字颜色（如“已有X条评论”、“添加新评论”） */
+    font-size: 1.4rem;
+    line-height: 1.4;
+}
+
+#comments ol,
+#comments ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#comments li {
+    margin: 0 0 16px 0;
+    padding: 16px 18px;
+    background: rgba(255, 255, 255, 0.35); /* 单条评论的背景色（半透明白），可调整透明度或替换为纯色 */
+    border: 1px solid rgba(255, 126, 156, 0.18); /* 单条评论的边框颜色，可随主题色调整 */
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+#comments .comment-meta,
+#comments .comment-author,
+#comments .comment-info {
+    color: #4a0f1d; /* 评论元信息（作者、时间等）文字颜色 */
+    font-weight: 600;
+}
+
+#comments .avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+    background: linear-gradient(135deg, #ff7aa2, #fc4e4e); /* 头像占位符的渐变色，可自定义主题色 */
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    vertical-align: middle;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+#comments .comment-content,
+#comments .comment-body,
+#comments .comment-text {
+    margin-top: 10px;
+    color: #2f1419; /* 评论正文文字颜色 */
+    line-height: 1.9;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+#comments a {
+    color: #d81b60; /* 评论区内链接文字颜色 */
+    text-decoration: none;
+}
+
+#comments a:hover {
+    color: #9c3345; /* 链接悬停时的文字颜色 */
+}
+
+#comments .page-navigator {
+    margin: 18px 0 0;
+    gap: 8px;
+}
+
+#comments .page-navigator a,
+#comments .page-navigator span {
+    min-width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: #fbc7d0a5; /* 分页器页码按钮背景色（非当前页） */
+    color: #3c1212; /* 分页器页码文字颜色 */
+}
+
+#comments .page-navigator .current {
+    background-color: #fc4e4e; /* 分页器当前页码的背景色 */
+    color: #fff;
+}
+
+#comments .respond {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px dashed rgba(156, 51, 69, 0.35); /* 分隔线颜色（评论区与回复表单之间） */
+}
+
+#comments form p {
+    margin: 0 0 14px;
+}
+
+#comments label {
+    display: block;
+    margin-bottom: 6px;
+    color: #5b1823; /* 表单标签文字颜色 */
+    font-size: 1rem;
+}
+
+#comments input.text,
+#comments textarea.textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid rgba(156, 51, 69, 0.28); /* 输入框边框颜色 */
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.72); /* 输入框背景色 */
+    color: #2f1419; /* 输入框文字颜色 */
+    outline: none;
+}
+
+#comments input.text:focus,
+#comments textarea.textarea:focus {
+    border-color: #ff7096; /* 输入框聚焦时的边框颜色 */
+    box-shadow: 0 0 0 3px rgba(255, 112, 150, 0.18); /* 输入框聚焦时的外发光颜色 */
+}
+
+#comments .submit {
+    display: inline-block;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ff7aa2, #fc4e4e); /* 提交按钮的渐变色 */
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#comments .submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(252, 78, 78, 0.22); /* 提交按钮悬停时的阴影颜色 */
+}
+
+#comments .error,
+#comments .message,
+#comments .tip,
+#comments .notice {
+    margin: 10px 0;
+    color: #9c3345; /* 错误/提示信息的文字颜色 */
+}
