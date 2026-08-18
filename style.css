@@ -122,8 +122,8 @@ html, body {
 
 /* 侧边栏样式 */
 .cebianlan-rongqi {
-    width: 19%;
-    min-width: 19%;
+    width: 20%;
+    min-width: 20%;
     padding: 0 20px;
     position: sticky;
     top: 25px;
@@ -279,7 +279,7 @@ html, body {
 }
 
 .wenzhang-rongqi {
-    flex-grow: 1;
+    width: 80%;
     padding: 0 20px;
     overflow-wrap: break-word;
     word-break: break-word;
@@ -352,6 +352,10 @@ html, body {
     align-self: start;
     width: 100%;
     height: auto;
+}
+
+.img {
+    max-width: 100%;
 }
 
 .suolvetu img {
@@ -590,6 +594,5 @@ html, body {
 }
 
 .wenzhang-neirong img {
-    max-width: 100%;
     object-fit: contain;
 }

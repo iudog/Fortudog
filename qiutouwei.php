@@ -1,6 +1,7 @@
 <div class="ti-shi-ka-pian">
     <div class="wen-zi-nei-rong">
-        <p>本主题暂未开发后台可视化样式配置。如需调整外观，请直接编辑主题源代码，所有可自定义区域均已添加详细注释说明。</p>
+        <p>该版本暂未开发后台可视化样式配置。如需调整外观，请直接编辑主题源代码，所有可自定义区域均已添加详细注释说明。</p>
+        <p>其实是上班忙不赢（悲</p>
     </div>
     <div class="da-shang-qu-kuai">
         <div class="dan-ge-ma">
