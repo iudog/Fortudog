@@ -21,6 +21,10 @@ html, body {
     scrollbar-width: none;
 }
 
+img {
+    max-width: 100%;
+}
+
 .fengmian {
     position: fixed;
     top: 0;
@@ -352,10 +356,6 @@ html, body {
     align-self: start;
     width: 100%;
     height: auto;
-}
-
-.img {
-    max-width: 100%;
 }
 
 .suolvetu img {
