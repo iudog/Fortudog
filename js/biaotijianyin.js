@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     var daohanglan = document.querySelector('.daohanglan');
-    var biaotiFangkuai = document.querySelector('.wenzhang-biaoti');
+    var biaotiFangkuai = document.querySelector('.index-biaoti');
 
     var shangciGundong = 0;
     var daohanglanDonghuaZhong = false;
@@ -32,9 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
         shangciGundong = gundongJuli;
     }
 
-    function chuliBiaotiFangkuai(gundongJuli) {
+    function chuliBiaotiFangkuai() {
         if (!biaotiFangkuai) return;
-        var jindu = Math.min(Math.max(gundongJuli / biaotiYuzhi, 0), 1);
+        var shituDingbu = biaotiFangkuai.getBoundingClientRect().top;
+        var jindu = Math.min(Math.max(-shituDingbu / biaotiYuzhi, 0), 1);
         var suofang = 1 - jindu * 0.4 * Math.pow(jindu, 0.7);
         var toumingdu = 1 - jindu;
         var weiyi = -(jindu * biaotiYuzhi * 0.5);
@@ -45,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function gengxinSuoyou() {
         var gundongJuli = window.pageYOffset || document.documentElement.scrollTop;
         chuliDaohanglan(gundongJuli);
-        chuliBiaotiFangkuai(gundongJuli);
+        chuliBiaotiFangkuai();
         zhengzaiDonghua = false;
     }
 
