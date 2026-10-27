@@ -4,7 +4,7 @@
  *
  * @package Fortudog
  * @author iudog
- * @version 1.0.1
+ * @version 1.1.0
  * @link https://iudog.com
  */
 
@@ -16,6 +16,16 @@ $this->need('header.php');
 <div id="id-yulu" class="yulu">
     <p id="id-riye" class="riye">日夜两盏灯，春秋一场梦</p>
     <p id="id-mengxiang" class="mengxiang">没有梦想，只会做梦</p> <!-- 封面文字修改 -->
+</div>
+
+<?php
+$biaotiMingcheng = $this->getArchiveTitle();
+if (empty($biaotiMingcheng)) {
+    $biaotiMingcheng = $this->options->title;
+}
+?>
+<div class="index-biaoti">
+    <h1 class="biaoti-dazi"><?php echo $biaotiMingcheng; ?></h1>
 </div>
 
 <div id="id-neirong-quyu" class="neirong-rongqi">

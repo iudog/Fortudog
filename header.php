@@ -18,6 +18,14 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <img src="https://pic1.zhimg.com/v2-bbb238e56874a1a00361e1ade60ba933" alt="背景图片" class="fengmian"> <!-- 背景图片 -->
 
 <nav class="daohanglan">
+    <button type="button" class="hanbao-caidan-anniu" id="id-hanbao-caidan-anniu" aria-label="打开菜单">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+
     <div class="logo">
         <a href="<?php $this->options->siteUrl(); ?>">
             <?php $this->options->title() ?>
@@ -51,6 +59,27 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             <?php endwhile; ?>
         </ul>
     </div>
+
+    <button type="button" class="sousuo-anniu" id="id-sousuo-anniu" aria-label="打开搜索">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+    </button>
+
+    <div class="daohang-sousuo" id="id-daohang-sousuo">
+        <form method="post" action="<?php $this->options->searchUrl(); ?>" role="search" class="daohang-sousuo-biao-dan">
+            <input type="text" name="s" class="daohang-sousuo-shu-ru" placeholder="搜索文章..." required />
+            <button type="submit" class="daohang-sousuo-ti-jiao-an-niu" aria-label="搜索">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </form>
+    </div>
 </nav>
+
+<?php $this->need('head-chouti.php'); ?>
 
 <div class="quanbu-ronqi">

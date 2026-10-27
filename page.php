@@ -3,7 +3,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('header.php');
 ?>
 
-<div class="wenzhang-biaoti">
+<div class="index-biaoti wenzhang-biaoti">
     <h1 class="biaoti-dazi"><?php $this->title(); ?></h1>
     <p class="fabiao-shijian">
         发表于 <?php $this->date(); ?>

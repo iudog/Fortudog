@@ -1,6 +1,6 @@
 # Fortudog
 > 一款轻量、简约、美观、大方的 Typecho 主题
-> <div style="display: flex; justify-content: center; gap: 15px; align-items: center;">
+<div style="display: flex; justify-content: center; gap: 15px; align-items: center;">
   <img src="https://pic4.zhimg.com/80/v2-dfb708d5a72874d0eddde25c2b0914d3" alt="主题封面" style="height: auto; width: auto;">
 </div>
 

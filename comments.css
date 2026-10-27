@@ -152,3 +152,11 @@
     margin: 10px 0;
     color: #9c3345; /* 错误/提示信息的文字颜色 */
 }
+
+/* 禁用评论作者链接的点击并恢复为纯文本样式 */
+#comments .comment-author a {
+    pointer-events: none; /* 禁止鼠标事件（点击、悬停等） */
+    cursor: default; /* 鼠标指针恢复为默认箭头 */
+    color: #4a0f1d; /* 与你现有的 .comment-author 文字颜色保持一致 */
+    text-decoration: none; /* 去除下划线 */
+}

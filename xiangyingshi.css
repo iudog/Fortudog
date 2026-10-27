@@ -1,6 +1,6 @@
 @media (max-width: 800px) {
     html {
-        font-size: 8px;
+        font-size: 12px;
     }
 
     .logo {
@@ -18,11 +18,6 @@
     }
 
     .yulu {
-        width: 100%;
-        height: 90px;
-    }
-
-    .yulu p {
         display: none;
     }
 
@@ -39,8 +34,8 @@
         padding: 10px;
     }
 
-    .wenzhang-biaoti {
-        margin: 100px 10px 10px;
+    .index-biaoti {
+        margin: 80px 0 10px;
     }
 
     .biaoti-dazi {
@@ -56,5 +51,85 @@
     .wenzhang-neirong {
         padding: 22px;
         font-size: 16px;
+    }
+
+    /* ====移动端导航 / 搜索 / 抽屉样式==== */
+    .daohanglan {
+        justify-content: space-between;
+        padding: 12px 14px;
+    }
+
+    .hanbao-caidan-anniu {
+        display: flex;
+        order: 1;
+    }
+
+    /* 移动端 logo 居中，夹在两个按钮中间 */
+    .logo {
+        text-align: center;
+        order: 2;
+        flex: 1;
+        min-width: 0;
+    }
+
+    /* 移动端显示搜索图标按钮 */
+    .sousuo-anniu {
+        display: flex;
+        order: 3;
+    }
+
+    /* 移动端搜索条：从右往左覆盖式滑入，与导航栏同一行水平对齐， */
+    .daohang-sousuo {
+        /* 固定定位：脱离文档流，不参与导航栏 flex 布局，因此绝不可能挤压标题 */
+        position: fixed;
+        /* 垂直位置：贴合导航栏区域，和按钮同一行，顶部 12px 与导航栏 padding 对齐 */
+        top: 12px;
+        /* 默认放在屏幕右侧外面，从右往左滑入做抽屉感 */
+        right: 0;
+        /* 高度尽量与导航栏按钮高度一致，做成一条很薄的搜索条 */
+        height: 40px;
+        /* 宽度：展开后几乎占满整行，左右各留 10px，保证是“很矮很小刚好放下搜索框”的样子 */
+        width: calc(100% - 20px);
+        /* 左右各留 10px 安全边距：靠 transform 移动，所以用 left=10px + width=calc(100%-20px) 等价 */
+        left: 10px;
+        /* 默认隐藏：沿 X 轴整体推到屏幕右侧外面，实现“从右往左覆盖上来” */
+        transform: translateX(110%);
+        /* 默认透明，配合滑入过渡更柔和 */
+        opacity: 0;
+        /* 不可交互，防止误点 */
+        visibility: hidden;
+        /* 层级比导航栏高，确保覆盖在导航栏和页面内容之上 */
+        z-index: 999;
+        /* 圆角：长条胶囊形状，与 PC 端搜索框风格保持一致 */
+        border-radius: 20px;
+        /* 过渡动画：只动水平位移和透明度，宽度高度都不动 */
+        transition: transform 0.5s ease, opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    /* 移动端搜索框展开状态类：由JS添加 yi-da-kai */
+    .daohang-sousuo.yi-da-kai {
+        /* 水平位置归位：从屏幕右侧滑到正常位置，覆盖在导航栏同一行 */
+        transform: translateX(0);
+        /* 完全可见 */
+        opacity: 1;
+        /* 允许交互 */
+        visibility: visible;
+        /* 防止 PC 端流式布局属性被移动端继承 */
+        width: calc(100% - 20px);
+        flex: unset;
+        margin: 0;
+    }
+
+    /* 确保抽屉在窄屏下宽度不超过 80% 视口，并保持遮罩层不变，仅抽屉背景透明 */
+    .cebianlan-chouti {
+        width: min(320px, 80vw);
+        background-color: transparent;
+    }
+
+    /* 抽屉内列表项保持足够点击高度 */
+    .cebianlan-chouti .fen-lei-xiang a,
+    .cebianlan-chouti .ye-mian-xiang a {
+        /* 行高增加，方便手机点击 */
+        line-height: 1.8;
     }
 }
